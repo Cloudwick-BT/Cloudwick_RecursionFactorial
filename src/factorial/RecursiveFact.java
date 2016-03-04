@@ -4,7 +4,7 @@ import java.util.*;
 
 public class RecursiveFact {
 
-	public static int factMethod(int num){
+	public static long factMethod(int num){
 		if (num == 0){
 			return 1;
 		}
@@ -14,27 +14,14 @@ public class RecursiveFact {
 	}
 	
 	public static void main(String[] args){
-		int num=0;
-		Scanner inputScan = new Scanner(System.in);
-		System.out.println("Enter the number to be checked : ");
-		try{
-			num = inputScan.nextInt();
-			if (num < 0 ){
-				System.out.print("Input need to be positive");
-				inputScan.close();
-				return;
+		int num=20;
+		
+		for(int i = 1 ; i<=num ; i++){
+			System.out.print(factMethod(i));
+			if(i<20){
+				System.out.print(", ");
 			}
 		}
-		catch (InputMismatchException e){
-			System.out.print("Number must be an integer");
-			inputScan.close();
-			return;
-		}
-		finally{
-			inputScan.close();
-		}
-		
-		System.out.print(factMethod(num));
 
 	}
 }
